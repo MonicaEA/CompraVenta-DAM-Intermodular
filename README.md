@@ -1,12 +1,13 @@
-# Ludoteca-DAM-Intermodular
-Proyecto Intermodular de 1º DAM: Aplicación para la gestión de una ludoteca de videojuegos retro con sistema de préstamos y perfiles de usuario.
-Con este proyecto pretendo desarrollar una pequeña aplicación para la gestión de una ludoteca personal de videojuegos retro. En la app se podrán catalogar juegos , gestionar diferentes usuarios con perfiles diferentes ( Gestor y "clientes") y controlar el sistema de prestamos de los mismos.
+# CompraVenta-DAM-Intermodular
+Proyecto Intermodular de 1º DAM: Aplicación para la gestión de un pequeño negocio que llevo desarrollando como hobbie los últimos años , en el que me dedico a adquirir videojuegos retro de particulares para la posterior venta a un precio superior.
+El proyecto real se compone de 2 tipos diferentes de stock, el mio propio , y el adquirido con posteridad junto con una "socia". El reparto de beneficios es de 70-30 en el stock propio y del 50-50 en el stock común.
 
 Funciones principales  :
 - Gestión del inventario : Registro de los videojuegos por plataforma y género.
+- Reparto de beneficios : calculos según pertenencia del artículo a un stock o otro.
 - Control de usuarios: Diferentes perfiles para diferentes acciones.
-- Sistema de prestamos : Registro de prestamos y disponibilidad.
-- Histórico: Se registrará quien incorporó el juego al catálogo.
+- Sistema de compras y ventas : Registro de entrada y salida del producto y su disponibilidad.
+- Histórico: Se registrará quien incorporó el juego al catálogo y las ventas.
 
 
 Tecnológias utilizadas :
