@@ -15,7 +15,9 @@ public class Clientes {
      private String telefono;
      private TipoCliente tipoCliente;
 
-
+     public String toCSV(){
+          return idCliente+";"+nombre+";"+apellidos+";"+email+";"+telefono;
+     }
 
 
 

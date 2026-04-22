@@ -17,6 +17,10 @@ public class Videojuegos {
     private TipoStock tipo;
     private int usuarioRegistro;
 
+    public String toCSV(){
+        return idJuego+";"+titulo+";"+precioCompra+";"+precioVentaEstimada;
+    }
+
 
 
 }

@@ -7,22 +7,23 @@ import com.retrojuegos.retrojuegos.model.Videojuegos;
 import java.util.List;
 
 public class VideojuegosController {
+    private static List<Videojuegos> misJuegos = DataSet.getJuegos();
 
     // metodo para ver el stock.
     public static void verStock(){
-        List<Videojuegos> stock = DataSet.getJuegos();
+
         System.out.println("Inventario");
-        if (stock.isEmpty()){
+        if (misJuegos.isEmpty()){
             System.out.println("Almacen vacio");
         } else {
-            for (Videojuegos v : stock){
+            for (Videojuegos v : misJuegos){
                 System.out.println("ID " + v.getIdJuego() + " " + v.getTitulo());
             }
         }
     }
 
     public static Videojuegos buscarJuego(String titulo){
-        for (Videojuegos v : DataSet.getJuegos()){
+        for (Videojuegos v : misJuegos){
             if (v.getTitulo().equalsIgnoreCase(titulo)){
                 return v;
             }
@@ -32,7 +33,7 @@ public class VideojuegosController {
     }
 
     public static void registrarCompra(Videojuegos nuevo){
-        DataSet.getJuegos().add(nuevo);
+        misJuegos.add(nuevo);
         System.out.println("Compra registrada de : " +nuevo.getTitulo());
         System.out.println("Stock de: " +nuevo.getTipo());
 
@@ -63,7 +64,7 @@ public class VideojuegosController {
 
 
         // aqui saco el juego del listado de stock.
-        DataSet.getJuegos().remove(v);
+        misJuegos.remove(v);
 
         //TODO
         // Aquí llamaríamos a GestionController para guardar el archivo .dat

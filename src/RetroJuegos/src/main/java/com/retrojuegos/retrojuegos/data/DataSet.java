@@ -9,7 +9,7 @@ public class DataSet {
     // 1. Lista de Usuarios (Para probar el Login)
     private static ObservableList<Usuarios> listaUsuarios = FXCollections.observableArrayList(
             new Usuarios(1, "Beatriz", "Retro", "12345678A", "bea@retrojuegos.com", "1234", Perfil.ADMINISTRADOR),
-            new Usuarios(2, "Monica", "Gamer", "87654321B", "monica@retrojuegos.com", "4321", Perfil.TRABAJADOR)
+            new Usuarios(2, "Monica", "Gamer", "39458713m", "monica@retrojuegos.com", "4321", Perfil.TRABAJADOR)
     );
 
     // 2. Lista de Clientes (Para la agenda)
