@@ -25,8 +25,65 @@ public class DataSet {
             new Videojuegos(2, "The Legend of Zelda", 50.0, 120.0, 1, 1, EstadoJuego.COMPLETO, TipoStock.COMUN, 1)
     );
 
+    private static ObservableList<Plataformas> listaPlataformas = FXCollections.observableArrayList();
+    private static ObservableList<Generos> listaGeneros = FXCollections.observableArrayList();
+    private static ObservableList<Compras> listaCompras = FXCollections.observableArrayList();
+    private static ObservableList<Ventas> listaVentas = FXCollections.observableArrayList();
+
+
+    //inicializar plataformas
+    public static void inicializarPlataformas(){
+        if (listaPlataformas.isEmpty()){
+            listaPlataformas.add(new Plataformas(1,"Nintendo NES"));
+            listaPlataformas.add(new Plataformas(2,"Nintendo SNES"));
+            listaPlataformas.add(new Plataformas(3,"Nintendo 64"));
+            listaPlataformas.add(new Plataformas(4,"Nintendo GameBoy"));
+            listaPlataformas.add(new Plataformas(5,"Sega Master System"));
+            listaPlataformas.add(new Plataformas(6,"Sega MegaDrive"));
+            listaPlataformas.add(new Plataformas(7,"Sega DreamCast"));
+            listaPlataformas.add(new Plataformas(8,"Sony Playstation 1"));
+            listaPlataformas.add(new Plataformas(9,"Sony Playstation 2"));
+        }
+
+    }
+
+    //inicializar generos
+
+    public static void inizializarGeneros(){
+        if (listaGeneros.isEmpty()){
+            listaGeneros.add(new Generos(1,"Plataformas"));
+            listaGeneros.add(new Generos(2,"RPG"));
+            listaGeneros.add(new Generos(3,"Lucha"));
+            listaGeneros.add(new Generos(4,"Shooter"));
+            listaGeneros.add(new Generos(5,"Accion y Aventuras"));
+            listaGeneros.add(new Generos(6,"Deportes"));
+            listaGeneros.add(new Generos(7,"Survival"));
+        }
+    }
+
     // Métodos para que los controladores "pidan" los datos
-    public static ObservableList<Usuarios> getUsuarios() { return listaUsuarios; }
-    public static ObservableList<Clientes> getClientes() { return listaClientes; }
-    public static ObservableList<Videojuegos> getJuegos() { return listaJuegos; }
+    public static ObservableList<Generos> getGeneros(){
+        return listaGeneros;
+    }
+    public static ObservableList<Plataformas> getPlataformas(){
+        return listaPlataformas;
+    }
+    public static ObservableList<Compras> getCompras(){
+        return listaCompras;
+    }
+    public static ObservableList<Ventas> getVentas(){
+        return listaVentas;
+    }
+
+
+
+    public static ObservableList<Usuarios> getUsuarios() {
+        return listaUsuarios;
+    }
+    public static ObservableList<Clientes> getClientes() {
+        return listaClientes;
+    }
+    public static ObservableList<Videojuegos> getJuegos() {
+        return listaJuegos;
+    }
 }

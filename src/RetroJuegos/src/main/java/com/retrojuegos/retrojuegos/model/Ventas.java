@@ -13,15 +13,15 @@ import java.time.LocalDate;
 
 public class Ventas {
 
-     private int idVenta;
-     private int idJuego;
-     private int idUsuario;
-     private int idCliente;
-     private String titulo;
-     private double precioVenta;
-     private double beneficioMonica;
-     private double beneficioBetty;
-     private LocalDate fechaVenta;
+
+        private int idVenta;
+        private String titulo; // Asegúrate de que sea String y esté en esta posición
+        private double precioVenta;
+        private double beneficioMonica;
+        private double beneficioBetty;
+        private java.time.LocalDate fechaVenta;
+
+
 
     public String toCSV() {
         return idVenta + ";" + titulo + ";" + precioVenta + ";" + beneficioMonica + ";" + beneficioBetty + ";" + fechaVenta;

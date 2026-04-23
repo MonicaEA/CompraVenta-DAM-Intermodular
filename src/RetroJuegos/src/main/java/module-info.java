@@ -3,6 +3,7 @@ module com.retrojuegos.retrojuegos {
     requires javafx.fxml;
     requires static lombok;
     requires java.sql;
+    requires java.desktop;
 
 
     opens com.retrojuegos.retrojuegos to javafx.fxml;

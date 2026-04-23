@@ -1,12 +1,22 @@
 package com.retrojuegos.retrojuegos.ControllerView;
 
+import com.retrojuegos.retrojuegos.controller.GestionController;
+import com.retrojuegos.retrojuegos.dao.UsuarioDAO;
+import com.retrojuegos.retrojuegos.model.Usuarios;
 import javafx.fxml.FXML;
 
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginController {
+import java.awt.event.ActionEvent;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+public class LoginController implements Initializable {
 
     @FXML
     private TextField dniLogin;
@@ -16,6 +26,46 @@ public class LoginController {
 
     @FXML
     private Button btnLogin;
+
+    private UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        btnLogin.setOnAction(event->{
+            validarAcceso();
+        });
+    }
+
+    private void validarAcceso() {
+        String dni = dniLogin.getText();
+        String pass = passLogin.getText();
+
+        if (dni.isEmpty() || pass.isEmpty()){
+            mostrarAlerta("Faltan datos","Rellena los campos");
+            return;
+        }
+        try{
+            Usuarios user = usuarioDAO.validarLogin(dni,pass);
+            if (user != null){
+                System.out.println("Datos correctos ,bienvenida al curro " + user.getNombre());
+                GestionController.setUsuarioLogueado(user);
+                //TODO: Aquí cargaré la ventana del menú
+
+            }else {
+                mostrarAlerta("Te has equivocado","Error de datos de acceso!!!!");
+            }
+        }catch (SQLException e){
+            mostrarAlerta("Error", "No nos hemos conectado a la BBDD :(");
+        }
+    }
+
+    private void mostrarAlerta(String titulo , String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
 
 
 }
