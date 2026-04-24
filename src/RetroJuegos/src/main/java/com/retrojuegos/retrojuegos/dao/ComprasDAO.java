@@ -3,6 +3,7 @@ package com.retrojuegos.retrojuegos.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 
 public class ComprasDAO {
 
@@ -10,5 +11,19 @@ public class ComprasDAO {
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
+    public void insertarCompra(com.retrojuegos.retrojuegos.model.Compras c) throws java.sql.SQLException {
+        connection = com.retrojuegos.retrojuegos.database.DBConnection.getConnection();
+        String query = "INSERT INTO compras (id_juego, id_cliente, id_usuario, precio_compra, fecha_compra) VALUES (?,?,?,?,?)";
+
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, c.getIdCompra());
+        preparedStatement.setDate(2, java.sql.Date.valueOf(c.getFechaCompra()));
+        preparedStatement.setInt(3, c.getIdJuego());
+        preparedStatement.setDouble(4, c.getIdUsuario());
+        preparedStatement.setInt(5, c.getIdCliente());
+
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
+    }
 
 }

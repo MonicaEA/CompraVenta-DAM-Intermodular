@@ -16,8 +16,27 @@ public class ClientesDAO {
     private ResultSet resultSet;
 
 
+    //registrar cliente
+    public void insertarCliente(Clientes clientes) throws SQLException {
+        Connection connection = DBConnection.getConnection();
+        String query = "INSERT INTO clientes(nombre,apellidos,dni,email,telefono,tipo_cliente) VALUES (?,?,?,?,?,?)";
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1,clientes.getNombre());
+        preparedStatement.setString(2,clientes.getApellidos());
+        preparedStatement.setString(3,clientes.getDni());
+        preparedStatement.setString(4,clientes.getEmail());
+        preparedStatement.setString(5,clientes.getTelefono());
+        preparedStatement.setString(6,clientes.getTipoCliente().name());
+
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
+
+
+    }
+
+
     // creo un metodo para buscar por el movil
-    public Clientes buscarPorTeléfono(String telefono) throws SQLException {
+    public Clientes buscarPorTelefono(String telefono) throws SQLException {
         connection = DBConnection.getConnection();
         String query = "SELECT * FROM clientes WHERE telefono = ?";
 

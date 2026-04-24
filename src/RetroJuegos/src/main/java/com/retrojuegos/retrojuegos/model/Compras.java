@@ -11,14 +11,14 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Compras {
     private int idCompra;
-    private int idJuego;
-    private double precioCompra;
     private LocalDate fechaCompra;
+    private int idJuego;
     private int idUsuario;
+    private int idCliente;
 
 
     public String toCSV() {
-        return idCompra + ";" + idJuego + ";" + precioCompra + ";" + fechaCompra + ";" + idUsuario;
+        return idCompra + ";" + fechaCompra + ";" + idJuego + ";" + idUsuario + ";" + idCliente;
     }
 
 }

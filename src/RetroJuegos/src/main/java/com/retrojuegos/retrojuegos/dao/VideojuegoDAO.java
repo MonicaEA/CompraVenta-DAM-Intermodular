@@ -15,7 +15,7 @@ public class VideojuegoDAO {
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
-    public void insertarJuego(Videojuegos juego) throws SQLException {
+    public int insertarJuego(Videojuegos juego) throws SQLException {
         connection = DBConnection.getConnection();
         String query = "INSERT INTO videojuegos (titulo, precio_compra, precio_venta, id_plataforma, id_genero, estado, tipo_stock, id_usuario) VALUES (?,?,?,?,?,?,?,?)";
 
@@ -32,8 +32,13 @@ public class VideojuegoDAO {
         preparedStatement.setInt(8,juego.getUsuarioRegistro());
 
         preparedStatement.executeUpdate();
-        preparedStatement.close();
 
+
+        resultSet = preparedStatement.getGeneratedKeys();
+        if (resultSet.next()) {
+            return resultSet.getInt(1); // Devolvemos el ID del juego recién creado
+        }
+        return 0;
 
 
     }

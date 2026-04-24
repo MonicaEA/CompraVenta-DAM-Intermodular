@@ -24,6 +24,9 @@ public class GestionController {
     // metodo para crearCliente
 
 
+    public static Usuarios getUsuarioLogueado() {
+        return usuarioLogueado;
+    }
 
     public static void setUsuarioLogueado(Usuarios u) {
         usuarioLogueado = u;
