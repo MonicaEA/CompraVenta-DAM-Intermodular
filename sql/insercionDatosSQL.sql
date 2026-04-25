@@ -5,6 +5,7 @@ INSERT INTO usuarios (dni, nombre, apellidos, email, pass, perfil) VALUES
 
 /*Creo los clientes*/
 INSERT INTO clientes (dni,nombre,apellidos,email,telefono,tipo_cliente) VALUES
+(1, 'Venta', 'Mostrador', '00000000T', '000000000')  
 ('11122233A', 'Jose', 'Ruiz', 'jose@gmail.com', '600000000', 'vendedor'),
 ('44455566B', 'María', 'Gónzalez', 'maria@gmail.com', '611444555', 'comprador'),
 ('12345678A', 'Marcos', 'Gude', 'marcos@gmail.com', '611111111', 'ambos');
