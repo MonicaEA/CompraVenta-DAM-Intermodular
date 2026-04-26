@@ -1,6 +1,8 @@
 package com.retrojuegos.retrojuegos.ControllerView;
 
+import com.retrojuegos.retrojuegos.dao.VentasDAO;
 import com.retrojuegos.retrojuegos.dao.VideojuegoDAO;
+import com.retrojuegos.retrojuegos.model.Usuarios;
 import com.retrojuegos.retrojuegos.model.Videojuegos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,6 +40,7 @@ public class VentasViewController implements Initializable {
     private ObservableList<Videojuegos> listaCatalogo = FXCollections.observableArrayList();
     private ObservableList<Videojuegos> listaCarrito = FXCollections.observableArrayList();
     private VideojuegoDAO videojuegoDAO = new VideojuegoDAO();
+    private VentasDAO ventasDAO = new VentasDAO();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -88,10 +91,29 @@ public class VentasViewController implements Initializable {
 
         });
 
+        btnFinalizar.setOnAction(event->{
+            if (listaCarrito.isEmpty()){
+                mostrarAlerta("Carrito vacio", "Añade juegos para continuar");
+                return;
+            }
+            Usuarios usuarios = UsuarioActualController.getUsuarioLogueado();
+            boolean exito = ventasDAO.registrarVenta(listaCarrito,usuarios.getIdUsuario());
+
+            if (exito){
+                mostrarAlerta("Venta realizada", "Registrada correctamente");
+                listaCarrito.clear();
+                calcularTotal();
+                cargarCatalogo();
+            }else {
+                mostrarAlerta("Error", "No se ha podido guardar la venta");
+            }
+
+        });
+
     }
 
     private void mostrarAlerta(String titulo,String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensaje);

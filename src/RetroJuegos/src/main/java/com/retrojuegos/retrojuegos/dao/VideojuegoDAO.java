@@ -1,6 +1,8 @@
 package com.retrojuegos.retrojuegos.dao;
 
 import com.retrojuegos.retrojuegos.database.DBConnection;
+import com.retrojuegos.retrojuegos.model.EstadoJuego;
+import com.retrojuegos.retrojuegos.model.TipoStock;
 import com.retrojuegos.retrojuegos.model.Videojuegos;
 
 
@@ -23,7 +25,7 @@ public class VideojuegoDAO {
         preparedStatement.setDouble(3,juego.getPrecioVentaEstimada());
         preparedStatement.setInt(4,juego.getIdPlataforma());
         preparedStatement.setInt(5,juego.getIdGenero());
-        preparedStatement.setString(6,juego.getEstado().name());
+        preparedStatement.setString(6,juego.getEstado().name().replace("_"," "));
         preparedStatement.setString(7,juego.getTipo().name());
         preparedStatement.setInt(8,juego.getUsuarioRegistro());
 
@@ -58,8 +60,8 @@ public class VideojuegoDAO {
             juego.setPrecioVentaEstimada(resultSet.getDouble("precio_venta_estimado"));
             juego.setIdPlataforma(resultSet.getInt("id_plataforma"));
             juego.setIdGenero(resultSet.getInt("id_genero"));
-            juego.setEstado(com.retrojuegos.retrojuegos.model.EstadoJuego.valueOf(resultSet.getString("estado").toUpperCase().replace(" ", "_")));
-            juego.setTipo(com.retrojuegos.retrojuegos.model.TipoStock.valueOf(resultSet.getString("tipo_stock").toUpperCase().replace(" ", "_")));
+            juego.setEstado(EstadoJuego.valueOf(resultSet.getString("estado").toUpperCase().replace(" ", "_")));
+            juego.setTipo(TipoStock.valueOf(resultSet.getString("tipo_stock").toUpperCase().replace(" ", "_")));
             juego.setUsuarioRegistro(resultSet.getInt("id_usuario_registro"));
 
             lista.add(juego);

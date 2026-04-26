@@ -1,8 +1,9 @@
 package com.retrojuegos.retrojuegos.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import com.retrojuegos.retrojuegos.database.DBConnection;
+import com.retrojuegos.retrojuegos.model.Compras;
+
+import java.sql.*;
 import java.time.LocalDate;
 
 public class ComprasDAO {
@@ -11,16 +12,15 @@ public class ComprasDAO {
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
-    public void insertarCompra(com.retrojuegos.retrojuegos.model.Compras c) throws java.sql.SQLException {
-        connection = com.retrojuegos.retrojuegos.database.DBConnection.getConnection();
+    public void insertarCompra(Compras compra) throws SQLException {
+        connection = DBConnection.getConnection();
         String query = "INSERT INTO compras (id_juego, id_cliente, id_usuario, fecha_compra) VALUES (?,?,?,?)";
-
         preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setInt(1, c.getIdJuego());
-        preparedStatement.setInt(2, c.getIdCliente());
-        preparedStatement.setInt(3, c.getIdUsuario());
-        preparedStatement.setDate(4, java.sql.Date.valueOf(c.getFechaCompra()));
 
+        preparedStatement.setInt(1, compra.getIdJuego());
+        preparedStatement.setInt(2, compra.getIdCliente());
+        preparedStatement.setInt(3, compra.getIdUsuario());
+        preparedStatement.setDate(4, Date.valueOf(compra.getFechaCompra()));
         preparedStatement.executeUpdate();
         preparedStatement.close();
     }

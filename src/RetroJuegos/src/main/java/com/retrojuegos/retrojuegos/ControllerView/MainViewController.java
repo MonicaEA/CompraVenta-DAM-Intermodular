@@ -21,6 +21,22 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        actions();
+
+
+
+
+
+    }
+
+    private void actions() {
+        configurarBotones();
+
+
+
+    }
+
+    private void configurarBotones() {
         btnComprar.setOnAction(event->{
             System.out.println("PAsando a pantalla de compras...");
             abrirVentanaCompra();
@@ -38,8 +54,6 @@ public class MainViewController implements Initializable {
         btnFinanzas.setOnAction(event->{
             System.out.println("Pantalla de los euritos...");
         });
-
-
 
     }
 
