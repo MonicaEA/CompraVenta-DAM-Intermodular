@@ -12,15 +12,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.retrojuegos.retrojuegos.ControllerView.StockViewController">
    <center>
       <TableView fx:id="tablaStock" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="261.0" text="Título" />
-          <TableColumn minWidth="0.0" prefWidth="108.0" text="Estado" />
-            <TableColumn prefWidth="105.0" text="Tipo Stock" />
-            <TableColumn prefWidth="142.0" text="Precio Venta Estimado" />
+          <TableColumn fx:id="colTitulo" prefWidth="261.0" text="Título" />
+          <TableColumn fx:id="colEstado" minWidth="0.0" prefWidth="108.0" text="Estado" />
+            <TableColumn fx:id="colTipo" prefWidth="105.0" text="Tipo Stock" />
+            <TableColumn fx:id="colPrecio" prefWidth="142.0" text="Precio Venta Estimado" />
         </columns>
          <BorderPane.margin>
             <Insets bottom="20.0" right="20.0" />

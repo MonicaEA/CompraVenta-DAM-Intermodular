@@ -4,6 +4,7 @@ module com.retrojuegos.retrojuegos {
     requires static lombok;
     requires java.sql;
     requires java.desktop;
+    requires mysql.connector.j;
 
 
     opens com.retrojuegos.retrojuegos to javafx.fxml;
