@@ -54,6 +54,7 @@ public class MainViewController implements Initializable {
         });
 
         btnFinanzas.setOnAction(event->{
+            abrirVentanaFinanzas();
             System.out.println("Pantalla de los euritos...");
         });
 
@@ -113,6 +114,26 @@ public class MainViewController implements Initializable {
             ((Stage) btnStock.getScene().getWindow()).close();
         }catch (IOException e){
             System.out.println("Error al cargar ventana de Stock: "+e.getMessage());
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private void abrirVentanaFinanzas(){
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/retrojuegos/retrojuegos/finanzas-view.fxml"));
+
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("FINANZAS");
+            stage.setScene(new Scene(root));
+            stage.show();
+            ((Stage) btnFinanzas.getScene().getWindow()).close();
+        }catch (IOException e){
+            System.out.println("Error al cargar ventana de Finanzas: "+e.getMessage());
             e.printStackTrace();
         }
 
