@@ -1,9 +1,7 @@
 package com.retrojuegos.retrojuegos.dao;
-
 import com.retrojuegos.retrojuegos.database.DBConnection;
 import com.retrojuegos.retrojuegos.model.Clientes;
 import com.retrojuegos.retrojuegos.model.TipoCliente;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

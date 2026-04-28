@@ -1,10 +1,8 @@
 package com.retrojuegos.retrojuegos.dao;
-
 import com.retrojuegos.retrojuegos.database.DBConnection;
 import com.retrojuegos.retrojuegos.model.Compras;
-
 import java.sql.*;
-import java.time.LocalDate;
+
 
 public class ComprasDAO {
 
@@ -24,5 +22,25 @@ public class ComprasDAO {
         preparedStatement.executeUpdate();
         preparedStatement.close();
     }
+
+    public double obtenerSumaTotalCompras() throws SQLException {
+        double total = 0.0;
+        connection = DBConnection.getConnection();
+
+        String query = "SELECT SUM(v.precio_compra) AS total " +
+                "FROM compras c " +
+                "JOIN videojuegos v ON c.id_juego = v.id_juego";
+
+        preparedStatement = connection.prepareStatement(query);
+        resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()) {
+            total = resultSet.getDouble("total");
+        }
+
+        preparedStatement.close();
+        return total;
+    }
+
 
 }

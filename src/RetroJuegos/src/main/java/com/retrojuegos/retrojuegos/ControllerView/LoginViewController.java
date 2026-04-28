@@ -54,7 +54,6 @@ public class LoginViewController implements Initializable {
             if (user != null) {
                 System.out.println("Datos correctos ,bienvenida al curro " + user.getNombre());
                 UsuarioActualController.setUsuarioLogueado(user);
-                //TODO: Aquí cargaré la ventana del menú
                 cambiarAMenuPrincipal();
 
             } else {

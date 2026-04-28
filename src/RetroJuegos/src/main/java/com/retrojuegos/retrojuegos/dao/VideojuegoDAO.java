@@ -1,12 +1,11 @@
 package com.retrojuegos.retrojuegos.dao;
-
 import com.retrojuegos.retrojuegos.database.DBConnection;
 import com.retrojuegos.retrojuegos.model.EstadoJuego;
 import com.retrojuegos.retrojuegos.model.TipoStock;
 import com.retrojuegos.retrojuegos.model.Videojuegos;
-
-
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VideojuegoDAO {
 
@@ -41,8 +40,8 @@ public class VideojuegoDAO {
 
     }
 
-    public java.util.List<Videojuegos> obtenerDisponibles() throws SQLException {
-        java.util.List<Videojuegos> lista = new java.util.ArrayList<>();
+    public List<Videojuegos> obtenerDisponibles() throws SQLException {
+        List<Videojuegos> lista = new ArrayList<>();
         connection = DBConnection.getConnection();
 
         // Consulta limpia, solo leyendo la tabla videojuegos
@@ -52,7 +51,7 @@ public class VideojuegoDAO {
         resultSet = preparedStatement.executeQuery();
 
         while (resultSet.next()) {
-            Videojuegos juego = new Videojuegos(); // Constructor vacío
+            Videojuegos juego = new Videojuegos();
 
             juego.setIdJuego(resultSet.getInt("id_juego"));
             juego.setTitulo(resultSet.getString("titulo"));

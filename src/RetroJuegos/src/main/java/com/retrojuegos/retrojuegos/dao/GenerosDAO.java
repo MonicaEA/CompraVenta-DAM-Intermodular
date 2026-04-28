@@ -1,9 +1,6 @@
 package com.retrojuegos.retrojuegos.dao;
-
 import com.retrojuegos.retrojuegos.database.DBConnection;
 import com.retrojuegos.retrojuegos.model.Generos;
-import com.retrojuegos.retrojuegos.model.Plataformas;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
