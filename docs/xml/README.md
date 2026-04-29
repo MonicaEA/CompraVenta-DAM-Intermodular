@@ -35,8 +35,8 @@ Esta funcionalidad se integra en la vista "VER STOCK" del programa:
 
 Ha sido comprobado y testeado confirmando que funciona correctamente.
 He añadido las capturas de pantalla para verificar que se ha válidado y forzado errores:
-[VALIDACIÓN OK](docs/xml/Captura de Pantalla Validacion OK.jpg)
-[VALIDACIÓN KO](docs/xml/Captura de Pantalla Validación KO.jpg)
+* [VALIDACIÓN OK](docs/xml/Captura%20de%20Pantalla%20Validacion%20OK.jpg)
+* [VALIDACIÓN KO](docs/xml/Captura%20de%20Pantalla%20Validación%20KO.jpg)
 
 
 
