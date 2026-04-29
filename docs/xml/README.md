@@ -35,8 +35,8 @@ Esta funcionalidad se integra en la vista "VER STOCK" del programa:
 
 Ha sido comprobado y testeado confirmando que funciona correctamente.
 He añadido las capturas de pantalla para verificar que se ha válidado y forzado errores:
-* [VALIDACIÓN OK](docs/xml/Captura_OK.jpg)
-* [VALIDACIÓN KO](docs/xml/Captura_KO.jpg)
+* [VALIDACIÓN OK](https://github.com/MonicaEA/CompraVenta-DAM-Intermodular/blob/df7297f0ece223a704c027155fa076243086b075/docs/xml/Captura%20de%20Pantalla%20Validacion%20OK.jpg)
+* [VALIDACIÓN KO](https://github.com/MonicaEA/CompraVenta-DAM-Intermodular/blob/df7297f0ece223a704c027155fa076243086b075/docs/xml/Captura%20de%20Pantalla%20Validaci%C3%B3n%20KO.jpg)
 
 
 
