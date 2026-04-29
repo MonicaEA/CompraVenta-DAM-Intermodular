@@ -18,7 +18,7 @@ El archivo generado (videojuegos_exportados.xml) refleja el estado actual del st
 
 2. ¿Cómo la válido?
 Para comprobar el xml se ha usado un archivo xsd llamado esquema.xsd
-[Esquema XSD](src/main/resources/com/retrojuegos/retrojuegos/xml/esquema.xsd)
+[Esquema XSD]([src/main/resources/com/retrojuegos/retrojuegos/xml/esquema.xsd](https://github.com/MonicaEA/CompraVenta-DAM-Intermodular/blob/0f9980f4bd85028db45d40c9df9045598022e86c/docs/xml/esquema.xsd))
 Se han incorporado las siguientes reglas:
   - Estructura obligatoria con orden lógico.
   - IDS y relaciones , cada videojuego debe tener un id único y tiene que estar relacionado con un usuario que a su vez tiene un id.
