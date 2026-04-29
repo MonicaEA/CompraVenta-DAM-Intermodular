@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Regla para los tipos de stock , o común o propio !-->
+
+    <xs:simpleType name="tipoStockRegla">
+        <xs:restriction base="xs:string">
+                <xs:enumeration value="comun"/>
+                <xs:enumeration value="propio"/>
+        </xs:restriction>
+    </xs:simpleType>
+
