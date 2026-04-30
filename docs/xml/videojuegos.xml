@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<retro_inventario version="1.0"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="esquema.xsd">
+    <usuarios>
+        <usuario id="u1">
+            <nombre>Mónica</nombre>
+            <apellidos>Espiñeira</apellidos>
+            <email>monica.espineira1988@gmail.com</email>
+        </usuario>
+        <usuario id="u2">
+            <nombre>Beatriz</nombre>
+            <apellidos>Ferreira</apellidos>
+            <email>bettyfer@gmail.com</email>
+        </usuario>
+    </usuarios>
+
+    <catalogo>
+        <videojuego id="v1" usuarioReg="u1">
+            <titulo>The Legend Of Zelda</titulo>
+            <plataforma>Nintendo NES</plataforma>
+            <genero>RPG</genero>
+
+            <precios>
+                <compra moneda="EUR">35.00</compra>
+                <venta_estimado moneda="EUR">120.00</venta_estimado>
+            </precios>
+
+            <stock_info>
+                <tipo>comun</tipo>
+                <estado>COMPLETO</estado>
+            </stock_info>
+
+            <fecha_registro>2026-04-28</fecha_registro>
+        </videojuego>
+
+        <videojuego id="v2" usuarioReg="u2">
+            <titulo>Sonic</titulo>
+            <plataforma>Sega MegaDrive</plataforma>
+            <genero>Plataformas</genero>
+
+            <precios>
+                <compra moneda="EUR">15.00</compra>
+                <venta_estimado moneda="EUR">50.00</venta_estimado>
+            </precios>
+
+            <stock_info>
+                <tipo>propio</tipo>
+                <estado>CAJA SIN MANUAL</estado>
+            </stock_info>
+
+            <fecha_registro>2026-04-28</fecha_registro>
+        </videojuego>
+    </catalogo>
+</retro_inventario>
