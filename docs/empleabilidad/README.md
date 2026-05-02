@@ -3,7 +3,7 @@
 ---
 
 ## 🧠 Reflexión Final y Valoración Personal
-Reflexión Final y Valoración Personal
+
 El desarrollo de RetroJuegos ha sido mucho más exigente de lo que imaginaba. He tenido la idea en la cabeza desde el principio, ya que es una herramienta que me habría resultado tremendamente útil, pero llevar ese funcionamiento mental al código ha sido un camino complejo.
 
 Este proceso me ha permitido aprender mucho, aunque también me ha hecho enfrentarme a la gestión del tiempo y a mi propia autoexigencia. He descubierto que, a veces, "menos es más" y que la perfección es inalcanzable cuando aún se están construyendo las bases. La programación está siendo un reto personal para mí; aunque suelo aprender con facilidad, el código requiere un tiempo, una práctica y una paciencia que me están obligando a enfrentarme a mis propios límites y a crecer.
